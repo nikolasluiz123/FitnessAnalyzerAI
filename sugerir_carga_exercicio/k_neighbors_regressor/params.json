@@ -1,0 +1,30 @@
+[
+    {
+        "estimator": "KNeighborsRegressor",
+        "mean": -537.8136941407186,
+        "standard_deviation": 447.68332640667643,
+        "median": -406.55626745981954,
+        "variance": 200420.36074254676,
+        "standard_error": 141.56989819257015,
+        "min_max_score": [
+            -1873.9914,
+            -309.6119
+        ],
+        "estimator_params": {
+            "algorithm": "auto",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": null,
+            "n_neighbors": 4,
+            "p": 2,
+            "weights": "distance"
+        },
+        "scoring": "neg_mean_squared_error",
+        "features": "exercicio, serie, repeticoes",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:00.000",
+        "validation_time": "00:00:01.000",
+        "scaler": "NoneType"
+    }
+]

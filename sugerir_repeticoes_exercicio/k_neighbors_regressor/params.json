@@ -1,0 +1,30 @@
+[
+    {
+        "estimator": "KNeighborsRegressor",
+        "mean": -3.620558706728043,
+        "standard_deviation": 0.9266363861533667,
+        "median": -3.6243195072093846,
+        "variance": 0.8586549921433715,
+        "standard_error": 0.2930281543031951,
+        "min_max_score": [
+            -5.1237,
+            -2.4237
+        ],
+        "estimator_params": {
+            "algorithm": "kd_tree",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": null,
+            "n_neighbors": 5,
+            "p": 2,
+            "weights": "distance"
+        },
+        "scoring": "neg_mean_squared_error",
+        "features": "exercicio, serie, peso",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:01.000",
+        "validation_time": "00:00:03.000",
+        "scaler": "NoneType"
+    }
+]
