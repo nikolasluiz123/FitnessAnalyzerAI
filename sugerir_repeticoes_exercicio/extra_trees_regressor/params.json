@@ -1,19 +1,19 @@
 [
     {
         "estimator": "ExtraTreesRegressor",
-        "mean": -3.746282633124106,
-        "standard_deviation": 1.1685051384170348,
-        "median": -3.5255221355110358,
-        "variance": 1.3654042585070139,
-        "standard_error": 0.3695137695008149,
+        "mean": -3.684911352726047,
+        "standard_deviation": 1.1136769498272507,
+        "median": -3.424409123644679,
+        "variance": 1.2402763485765287,
+        "standard_error": 0.3521755739083176,
         "min_max_score": [
-            -5.6043,
-            -2.2515
+            -5.7843,
+            -2.3579
         ],
         "estimator_params": {
             "bootstrap": false,
             "criterion": "absolute_error",
-            "max_depth": 20,
+            "max_depth": 15,
             "max_features": "log2",
             "max_leaf_nodes": null,
             "min_impurity_decrease": 0.0,
@@ -21,7 +21,7 @@
             "min_samples_split": 2,
             "min_variance": 0.0,
             "min_weight_fraction_leaf": 0.0,
-            "n_estimators": 80,
+            "n_estimators": 140,
             "n_jobs": 1,
             "oob_score": false,
             "random_state": null,
@@ -31,8 +31,44 @@
         "scoring": "neg_mean_squared_error",
         "features": "exercicio, serie, peso",
         "feature_selection_time": "00:00:00.000",
-        "search_time": "00:00:29.000",
-        "validation_time": "00:02:00.000",
+        "search_time": "00:00:47.000",
+        "validation_time": "00:01:56.000",
+        "scaler": "NoneType"
+    },
+    {
+        "estimator": "ExtraTreesRegressor",
+        "mean": -3.8731958812223604,
+        "standard_deviation": 0.9625217811956145,
+        "median": -4.069808076908618,
+        "variance": 0.9264481792759784,
+        "standard_error": 0.30437611261003683,
+        "min_max_score": [
+            -5.207,
+            -2.4835
+        ],
+        "estimator_params": {
+            "bootstrap": false,
+            "criterion": "poisson",
+            "max_depth": 15,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 1,
+            "min_samples_split": 2,
+            "min_variance": 0.0,
+            "min_weight_fraction_leaf": 0.0,
+            "n_estimators": 210,
+            "n_jobs": 1,
+            "oob_score": false,
+            "random_state": null,
+            "verbose": 0,
+            "warm_start": false
+        },
+        "scoring": "neg_mean_squared_error",
+        "features": "exercicio, serie, peso",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:07.000",
+        "validation_time": "00:01:50.000",
         "scaler": "NoneType"
     }
 ]

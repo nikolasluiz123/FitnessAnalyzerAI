@@ -1,14 +1,14 @@
 [
     {
         "estimator": "KNeighborsRegressor",
-        "mean": -3.620558706728043,
-        "standard_deviation": 0.9266363861533667,
-        "median": -3.6243195072093846,
-        "variance": 0.8586549921433715,
-        "standard_error": 0.2930281543031951,
+        "mean": -3.619125459883479,
+        "standard_deviation": 0.9225415902315826,
+        "median": -3.441718616230027,
+        "variance": 0.8510829857070172,
+        "standard_error": 0.2917332661365544,
         "min_max_score": [
-            -5.1237,
-            -2.4237
+            -5.3182,
+            -2.5759
         ],
         "estimator_params": {
             "algorithm": "kd_tree",
@@ -23,8 +23,36 @@
         "scoring": "neg_mean_squared_error",
         "features": "exercicio, serie, peso",
         "feature_selection_time": "00:00:00.000",
-        "search_time": "00:00:01.000",
-        "validation_time": "00:00:03.000",
+        "search_time": "00:00:00.000",
+        "validation_time": "00:00:01.000",
+        "scaler": "NoneType"
+    },
+    {
+        "estimator": "KNeighborsRegressor",
+        "mean": -4.008155840119101,
+        "standard_deviation": 0.9921610354677985,
+        "median": -3.9219232381895575,
+        "variance": 0.9843835203005341,
+        "standard_error": 0.3137488677749346,
+        "min_max_score": [
+            -5.3844,
+            -2.5673
+        ],
+        "estimator_params": {
+            "algorithm": "kd_tree",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": null,
+            "n_neighbors": 5,
+            "p": 2,
+            "weights": "distance"
+        },
+        "scoring": "neg_mean_squared_error",
+        "features": "exercicio, serie, peso",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:00.000",
+        "validation_time": "00:00:01.000",
         "scaler": "NoneType"
     }
 ]
