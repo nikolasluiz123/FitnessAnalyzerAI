@@ -1,0 +1,40 @@
+[
+    {
+        "estimator": "RandomForestRegressor",
+        "mean": -19.102224372171854,
+        "standard_deviation": 1.0089929929715682,
+        "median": -18.946831620617488,
+        "variance": 1.0180668598657232,
+        "standard_error": 0.31907160009404206,
+        "min_max_score": [
+            -20.7226,
+            -17.614
+        ],
+        "estimator_params": {
+            "bootstrap": true,
+            "ccp_alpha": 0.0,
+            "criterion": "absolute_error",
+            "max_depth": 20,
+            "max_features": "log2",
+            "max_leaf_nodes": null,
+            "max_samples": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 1,
+            "min_samples_split": 5,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "n_estimators": 55,
+            "n_jobs": null,
+            "oob_score": false,
+            "random_state": null,
+            "verbose": 0,
+            "warm_start": false
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio, repeticoes, serie",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:07.000",
+        "validation_time": "00:01:36.000"
+    }
+]
