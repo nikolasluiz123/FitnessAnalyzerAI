@@ -33,28 +33,11 @@ eles serão apresentados abaixo.
 Uma primeira tentativa foi avaliar como os modelos de machine learning do scikit-learn se comportariam
 com dados temporais, mesmo sabendo que não é exatamente o objetivo dos modelos dessa biblioteca.
 
-A sugestão de repetições pode ser observada [aqui]() e a sugestão de peso [aqui](). Para chegar a conclusão de que
-os modelos não foram feitos para essa finalidade basta observar os arquivos de imagem dos gráficos gerados:
-[RandomForestRegressor](), [DecisionTreeClassifier]() e [KNeighborsRegressor]().
+A sugestão de repetições pode ser observada [aqui](https://github.com/nikolasluiz123/FitnessAnalyzerAI/blob/master/examples/scikit_learn/repetition_sugestor/example_repetitions_suggestor.py) e a sugestão de peso [aqui](https://github.com/nikolasluiz123/FitnessAnalyzerAI/blob/master/examples/scikit_learn/weight_suggestor/example_weight_suggestor.py). 
 
-Como um complemento para os gráficos também foi utilizado um relatório com métricas de regressão que foi salvo
-como um arquivo CSV, os arquivos podem ser encontrados para cada modelo testado: [RandomForestRegressor](), [DecisionTreeClassifier]() e [KNeighborsRegressor]().
+No [diretório de validações adicionais da sugestão de repetições](https://github.com/nikolasluiz123/FitnessAnalyzerAI/tree/master/examples/scikit_learn/repetition_sugestor/additional_validations) podem ser encontrados dados gráficos e relatórios com algumas métricas de regressão.
 
-Para facilitar abaixo está descrita uma tabela contendo as informações de cada um dos modelos testados.
-
-| Modelo                     | Mean Absolute Error | Mean Squared Error | Root Mean Squared Error | R² Score | Explained Variance |
-|----------------------------|---------------------|--------------------|-------------------------|----------|--------------------|
-| [RandomForestRegressor]()  |                     |                    |                         |          |                    |
-| [DecisionTreeClassifier]() |                     |                    |                         |          |                    |
-| [KNeighborsRegressor]()    |                     |                    |                         |          |                    |
-
-**Mean Absolute Error:** Mede o erro médio absoluto entre os valores reais e os previstos. É a média dos valores absolutos das diferenças entre valores reais e previstos.
-
-**Mean Squared Error:** Mede o erro médio quadrado entre os valores reais e os previstos, penalizando erros maiores de forma mais significativa.
-
-**Root Mean Squared Error:** É a raiz quadrada do MSE, trazendo a métrica para a mesma escala dos valores reais.
-
-**Mean Absolute Error:** Representa a proporção da variabilidade dos dados explicada pelo modelo.
+No [diretório de validações adicionais da sugestão de peso](https://github.com/nikolasluiz123/FitnessAnalyzerAI/tree/master/examples/scikit_learn/weight_suggestor/additional_validations) podem ser encontrados dados gráficos e relatórios com algumas métricas de regressão.
 
 ### Sugestões de Repetições e Peso usando Tensorflow e Keras
 
@@ -62,28 +45,9 @@ Como a implementação utilizando Scikit-Learn não chegou no ponto que gostaria
 com outro tipo de tecnologia, como as redes neurais. A ideia foi utilizar as redes LSTMs para que pudessem captar
 a evolução dos dados de treino do indivíduo ao longo do tempo.
 
-Foram implementadas as mesmas sugestões, para repetições o exemplo encontra-se [aqui](), já para peso podemos
-ver [aqui](). Agora, utilizando uma tecnologia mais apropriada para análises temporais, podemos ver graficamente
-que as redes testadas se adaptaram até um certo ponto aos dados do treinamento, veja o resultado de cada versão aqui:
-[V1](), [V2](), [V3](), [V4]().
+A sugestão de repetições pode ser observada [aqui](https://github.com/nikolasluiz123/FitnessAnalyzerAI/tree/master/examples/keras/repetition_sugestor/example_repetition_suggestor.py) e a sugestão de peso [aqui](https://github.com/nikolasluiz123/FitnessAnalyzerAI/tree/master/examples/keras/weight_suggestor/example_weight_suggestor.py). 
 
-Como um complemento para os gráficos também foi utilizado um relatório com métricas de regressão que foi salvo
-como um arquivo CSV, os arquivos podem ser encontrados para cada modelo testado: [RandomForestRegressor](), [DecisionTreeClassifier]() e [KNeighborsRegressor]().
+No [diretório de validações adicionais da sugestão de repetições](https://github.com/nikolasluiz123/FitnessAnalyzerAI/tree/master/examples/keras/repetition_sugestor/additional_validations) podem ser encontrados dados gráficos e relatórios com algumas métricas de regressão.
 
-Para facilitar abaixo está descrita uma tabela contendo as informações de cada um dos modelos testados.
-
-| Modelo | Mean Absolute Error | Mean Squared Error | Root Mean Squared Error | R² Score | Explained Variance |
-|--------|---------------------|--------------------|-------------------------|----------|--------------------|
-| [V1]() |                     |                    |                         |          |                    |
-| [V2]() |                     |                    |                         |          |                    |
-| [V3]() |                     |                    |                         |          |                    |
-| [V4]() |                     |                    |                         |          |                    |
-
-**Mean Absolute Error:** Mede o erro médio absoluto entre os valores reais e os previstos. É a média dos valores absolutos das diferenças entre valores reais e previstos.
-
-**Mean Squared Error:** Mede o erro médio quadrado entre os valores reais e os previstos, penalizando erros maiores de forma mais significativa.
-
-**Root Mean Squared Error:** É a raiz quadrada do MSE, trazendo a métrica para a mesma escala dos valores reais.
-
-**Mean Absolute Error:** Representa a proporção da variabilidade dos dados explicada pelo modelo.
+No [diretório de validações adicionais da sugestão de peso](https://github.com/nikolasluiz123/FitnessAnalyzerAI/tree/master/examples/keras/weight_suggestor/additional_validations) podem ser encontrados dados gráficos e relatórios com algumas métricas de regressão.
 
