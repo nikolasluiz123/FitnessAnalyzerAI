@@ -137,7 +137,7 @@ class KerasRepetitionSuggestorAgent(CommonAgent):
 
             additional_validator = KerasAdditionalRegressorValidator(model_instance=model,
                                                                      data=validation_data,
-                                                                     prefix_file_names=type(model).__name__,
+                                                                     prefix_file_names=type(pipe.model).__name__,
                                                                      validation_results_directory='additional_validations',
                                                                      show_graphics=False,
                                                                      scaler=self._data_pre_processor.scaler_y)

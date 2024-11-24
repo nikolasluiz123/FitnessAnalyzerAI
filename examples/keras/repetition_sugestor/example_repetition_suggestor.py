@@ -5,7 +5,7 @@ from analyze.keras.repetition_suggestor.agent import KerasRepetitionSuggestorAge
 from analyze.keras.repetition_suggestor.pre_processor import KerasRepetitionsSuggestorDataPreProcessor
 
 suggestor = KerasRepetitionSuggestorAgent(
-    force_execute_best_model_search=True,
+    force_execute_best_model_search=False,
     data_path='../../../data/workout_evolution/weightlifting_721_workouts.csv'
 )
 
