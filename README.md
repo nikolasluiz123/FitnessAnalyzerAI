@@ -9,7 +9,7 @@ estão interligadas.
 O projeto utiliza como base para o processamento mais complexo a biblioteca [MLModelTuner](https://github.com/nikolasluiz123/MLModelTuner),
 dessa forma, é possível realizar as implementações do que chamamos de Agentes que devem ter um único objetivo.
 
-Um Agente deve obrigatoriamente implementar [CommonAgent]() para que possua uma estrutura básica e que siga
+Um Agente deve obrigatoriamente implementar [CommonAgent](https://github.com/nikolasluiz123/FitnessAnalyzerAI/blob/master/analyze/common/common_agent.py#L4) para que possua uma estrutura básica e que siga
 os padrões pré estabelecidos. A implementação do Agente deve conseguir lidar com o treinamento inicial do modelo e,
 quando a base de dados se expandir ou mudar de alguma forma, deve ser possível realizar um retreinamento e
 reavaliar qual será o melhor modelo para essa nova versão da base de dados.
