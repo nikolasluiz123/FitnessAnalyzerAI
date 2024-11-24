@@ -1,14 +1,14 @@
 [
     {
         "estimator": "KNeighborsRegressor",
-        "mean": -22.422933425546443,
-        "standard_deviation": 1.4089238729909657,
-        "median": -22.228313831469464,
-        "variance": 1.9850664798838626,
-        "standard_error": 0.44554084884372414,
+        "mean": -21.1943801161471,
+        "standard_deviation": 1.1216358893080445,
+        "median": -21.275079639458014,
+        "variance": 1.258067068183848,
+        "standard_error": 0.3546924115601922,
         "min_max_score": [
-            -25.6166,
-            -20.7675
+            -23.5023,
+            -19.4828
         ],
         "estimator_params": {
             "algorithm": "brute",

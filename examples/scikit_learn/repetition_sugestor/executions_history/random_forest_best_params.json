@@ -1,14 +1,14 @@
 [
     {
         "estimator": "RandomForestRegressor",
-        "mean": -1.125914033817375,
-        "standard_deviation": 0.09420409696519895,
-        "median": -1.08913367449596,
-        "variance": 0.008874411885028605,
-        "standard_error": 0.029789951132938444,
+        "mean": -1.137075968293793,
+        "standard_deviation": 0.09770694853525662,
+        "median": -1.090643521534409,
+        "variance": 0.009546647792071285,
+        "standard_error": 0.030897650059626355,
         "min_max_score": [
-            -1.3359,
-            -1.0256
+            -1.362,
+            -1.0267
         ],
         "estimator_params": {
             "bootstrap": true,
@@ -35,6 +35,6 @@
         "pre_processing_time": "00:00:00.000",
         "feature_selection_time": "00:00:00.000",
         "search_time": "00:00:07.000",
-        "validation_time": "00:01:47.000"
+        "validation_time": "00:01:56.000"
     }
 ]

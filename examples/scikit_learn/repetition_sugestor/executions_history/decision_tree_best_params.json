@@ -1,14 +1,14 @@
 [
     {
         "estimator": "DecisionTreeRegressor",
-        "mean": -1.150983897310701,
-        "standard_deviation": 0.12653012352183912,
-        "median": -1.1310152707002419,
-        "variance": 0.016009872158451864,
-        "standard_error": 0.04001233829514574,
+        "mean": -1.1317128087267565,
+        "standard_deviation": 0.09047023988217257,
+        "median": -1.1221374045801527,
+        "variance": 0.008184864304337847,
+        "standard_error": 0.028609201848946865,
         "min_max_score": [
-            -1.3956,
-            -0.9733
+            -1.3101,
+            -1.0105
         ],
         "estimator_params": {
             "ccp_alpha": 0.0,
