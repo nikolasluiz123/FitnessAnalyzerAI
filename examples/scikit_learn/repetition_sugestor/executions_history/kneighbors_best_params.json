@@ -1,13 +1,13 @@
 [
     {
         "estimator": "KNeighborsRegressor",
-        "mean": -1.1923940272127591,
-        "standard_deviation": 0.10230365891967792,
-        "median": -1.1575413058631647,
-        "variance": 0.010466038628353797,
-        "standard_error": 0.0323512575155183,
+        "mean": -1.199986866041343,
+        "standard_deviation": 0.10289749720829601,
+        "median": -1.1558451245708643,
+        "variance": 0.010587894931731286,
+        "standard_error": 0.032539045670903266,
         "min_max_score": [
-            -1.3948,
+            -1.3913,
             -1.0757
         ],
         "estimator_params": {
@@ -25,6 +25,6 @@
         "pre_processing_time": "00:00:00.000",
         "feature_selection_time": "00:00:00.000",
         "search_time": "00:00:00.000",
-        "validation_time": "00:00:02.000"
+        "validation_time": "00:00:03.000"
     }
 ]

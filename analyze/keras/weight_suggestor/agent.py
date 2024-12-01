@@ -58,29 +58,11 @@ class KerasWeightSuggestorAgent(CommonAgent):
             hyper_band_iterations=1
         )
 
-        params_searcher_3 = KerasHyperBandSearcher(
-            objective='val_loss',
-            directory='search_params_3',
-            project_name='model_example_3',
-            epochs=15,
-            batch_size=KerasWeightSuggestorDataPreProcessor.BATCH_SIZE,
-            log_level=1,
-            callbacks=[],
-            max_epochs=20,
-            factor=3,
-            hyper_band_iterations=1
-        )
-
-
         history_manager_model_example_1 = KerasRegressorHistoryManager(output_directory='history_model_example_1',
                                                                        models_directory='models',
                                                                        best_params_file_name='best_executions')
 
         history_manager_model_example_2 = KerasRegressorHistoryManager(output_directory='history_model_example_2',
-                                                                       models_directory='models',
-                                                                       best_params_file_name='best_executions')
-
-        history_manager_model_example_3 = KerasRegressorHistoryManager(output_directory='history_model_example_3',
                                                                        models_directory='models',
                                                                        best_params_file_name='best_executions')
 
@@ -98,13 +80,6 @@ class KerasWeightSuggestorAgent(CommonAgent):
                 params_searcher=params_searcher_2,
                 validator=validator,
                 history_manager=history_manager_model_example_2
-            ),
-            KerasPipeline(
-                model=WeightSuggestorLSTMV3(),
-                data_pre_processor=self._data_pre_processor,
-                validator=validator,
-                params_searcher=params_searcher_3,
-                history_manager=history_manager_model_example_3
             )
         ]
 

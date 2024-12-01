@@ -5,7 +5,7 @@ class CommonAgent(ABC):
     """
     Implementação utilizada como base para criação dos agentes de machine learning.
     """
-    def __init__(self, force_execute_best_model_search: bool, data_path: str):
+    def __init__(self, force_execute_best_model_search: bool, data_path: str = None):
         """
         :param force_execute_best_model_search: Flag que indica se deve ser executado obrigatoriamente o processo de
         treinamento. Normalmente, após treinar o modelo, o intuito é utilizar a implementação com essa flag false e apenas

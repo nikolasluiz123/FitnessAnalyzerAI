@@ -1,0 +1,35 @@
+[
+    {
+        "estimator": "DecisionTreeClassifier",
+        "mean": 0.29438894438894436,
+        "standard_deviation": 0.06548476948885353,
+        "median": 0.2837995337995338,
+        "variance": 0.004288255035008282,
+        "standard_error": 0.02070810236358774,
+        "min_max_score": [
+            0.1795,
+            0.4359
+        ],
+        "estimator_params": {
+            "ccp_alpha": 0.0,
+            "class_weight": null,
+            "criterion": "gini",
+            "max_depth": 9,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 26,
+            "min_samples_split": 29,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "random_state": null,
+            "splitter": "random"
+        },
+        "scoring": "accuracy",
+        "features": "idade, genero, peso, altura, duracao_sessao, frequencia_treino, nivel_experiencia, percentual_gordura",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:03.000",
+        "validation_time": "00:00:20.000"
+    }
+]

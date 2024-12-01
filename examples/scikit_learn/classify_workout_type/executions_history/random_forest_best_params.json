@@ -1,0 +1,41 @@
+[
+    {
+        "estimator": "RandomForestClassifier",
+        "mean": 0.2635364635364635,
+        "standard_deviation": 0.029166229146000252,
+        "median": 0.26456876456876455,
+        "variance": 0.0008506689225969945,
+        "standard_error": 0.009223171485974846,
+        "min_max_score": [
+            0.2051,
+            0.2949
+        ],
+        "estimator_params": {
+            "bootstrap": true,
+            "ccp_alpha": 0.0,
+            "class_weight": null,
+            "criterion": "log_loss",
+            "max_depth": 7,
+            "max_features": "sqrt",
+            "max_leaf_nodes": null,
+            "max_samples": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 20,
+            "min_samples_split": 26,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "n_estimators": 38,
+            "n_jobs": null,
+            "oob_score": false,
+            "random_state": null,
+            "verbose": 0,
+            "warm_start": false
+        },
+        "scoring": "accuracy",
+        "features": "idade, genero, peso, altura, duracao_sessao, frequencia_treino, nivel_experiencia, percentual_gordura",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:28.000",
+        "validation_time": "00:06:37.000"
+    }
+]

@@ -22,7 +22,7 @@ class ScikitLearnWeightSuggestorAgent(CommonAgent):
     def _initialize_multi_process_manager(self):
         params_searcher = ScikitLearnHalvingRandomCVHyperParamsSearcher(number_candidates='exhaust',
                                                                         min_resources=100,
-                                                                        max_resources=2000,
+                                                                        max_resources=5000,
                                                                         resource='n_samples',
                                                                         factor=3,
                                                                         log_level=1)
@@ -116,20 +116,21 @@ class ScikitLearnWeightSuggestorAgent(CommonAgent):
         )
 
     def _execute_additional_validation(self):
-        validation_data = self._data_pre_processor.get_data_additional_validation()
+        if self._force_execute_best_model_search:
+            validation_data = self._data_pre_processor.get_data_additional_validation()
 
-        for pipe in self._process_manager.pipelines:
-            model = pipe.history_manager.get_saved_model(pipe.history_manager.get_history_len())
+            for pipe in self._process_manager.pipelines:
+                model = pipe.history_manager.get_saved_model(pipe.history_manager.get_history_len())
 
-            additional_validator = ScikitLearnRegressorAdditionalValidator(
-                estimator=model,
-                prefix_file_names=type(model).__name__,
-                validation_results_directory='additional_validations',
-                data=validation_data,
-                show_graphics=False
-            )
+                additional_validator = ScikitLearnRegressorAdditionalValidator(
+                    estimator=model,
+                    prefix_file_names=type(model).__name__,
+                    validation_results_directory='additional_validations',
+                    data=validation_data,
+                    show_graphics=False
+                )
 
-            additional_validator.validate()
+                additional_validator.validate()
 
     def _execute_prediction(self, data_dictionary: dict):
         data_frame = pd.DataFrame.from_dict(data_dictionary, orient='columns')

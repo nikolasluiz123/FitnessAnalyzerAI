@@ -1,4 +1,4 @@
-import pandas as pd
+from keras.src.callbacks import EarlyStopping
 from keras.src.callbacks import EarlyStopping
 from wrappers.keras.history_manager.regressor_history_manager import KerasRegressorHistoryManager
 from wrappers.keras.hyper_params_search.hyper_band_searcher import KerasHyperBandSearcher
@@ -8,8 +8,7 @@ from wrappers.keras.validator.additional_validator import KerasAdditionalRegress
 from wrappers.keras.validator.basic_regressor_validator import KerasBasicRegressorValidator
 
 from analyze.common.common_agent import CommonAgent
-from analyze.keras.repetition_suggestor.neural_networks import RepetitionSuggestorLSTMV1, RepetitionSuggestorLSTMV3, \
-    RepetitionSuggestorLSTMV2
+from analyze.keras.repetition_suggestor.neural_networks import RepetitionSuggestorLSTMV1, RepetitionSuggestorLSTMV2
 from analyze.keras.repetition_suggestor.pre_processor import KerasRepetitionsSuggestorDataPreProcessor
 
 
@@ -61,28 +60,11 @@ class KerasRepetitionSuggestorAgent(CommonAgent):
             hyper_band_iterations=1
         )
 
-        params_searcher_3 = KerasHyperBandSearcher(
-            objective='val_loss',
-            directory='search_params_3',
-            project_name='model_example_3',
-            epochs=15,
-            batch_size=KerasRepetitionsSuggestorDataPreProcessor.BATCH_SIZE,
-            log_level=1,
-            callbacks=[],
-            max_epochs=20,
-            factor=3,
-            hyper_band_iterations=1
-        )
-
         history_manager_model_example_1 = KerasRegressorHistoryManager(output_directory='history_model_example_1',
                                                                        models_directory='models',
                                                                        best_params_file_name='best_executions')
 
         history_manager_model_example_2 = KerasRegressorHistoryManager(output_directory='history_model_example_2',
-                                                                       models_directory='models',
-                                                                       best_params_file_name='best_executions')
-
-        history_manager_model_example_3 = KerasRegressorHistoryManager(output_directory='history_model_example_3',
                                                                        models_directory='models',
                                                                        best_params_file_name='best_executions')
 
@@ -100,13 +82,6 @@ class KerasRepetitionSuggestorAgent(CommonAgent):
                 params_searcher=params_searcher_2,
                 validator=validator,
                 history_manager=history_manager_model_example_2
-            ),
-            KerasPipeline(
-                model=RepetitionSuggestorLSTMV3(),
-                data_pre_processor=self._data_pre_processor,
-                validator=validator,
-                params_searcher=params_searcher_3,
-                history_manager=history_manager_model_example_3
             )
         ]
 
