@@ -1,4 +1,3 @@
-import pandas as pd
 from keras.src.callbacks import EarlyStopping
 from wrappers.keras.history_manager.regressor_history_manager import KerasRegressorHistoryManager
 from wrappers.keras.hyper_params_search.hyper_band_searcher import KerasHyperBandSearcher
@@ -8,8 +7,7 @@ from wrappers.keras.validator.additional_validator import KerasAdditionalRegress
 from wrappers.keras.validator.basic_regressor_validator import KerasBasicRegressorValidator
 
 from analyze.common.common_agent import CommonAgent
-from analyze.keras.weight_suggestor.neural_networks import WeightSuggestorLSTMV1, WeightSuggestorLSTMV2, \
-    WeightSuggestorLSTMV3
+from analyze.keras.weight_suggestor.neural_networks import WeightSuggestorLSTMV1, WeightSuggestorLSTMV2
 from analyze.keras.weight_suggestor.pre_processor import KerasWeightSuggestorDataPreProcessor
 
 
