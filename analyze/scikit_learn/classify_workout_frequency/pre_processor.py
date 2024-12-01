@@ -18,7 +18,7 @@ class ScikitLearnClassifyWorkoutFrequencyDataPreProcessor(CommonDataPreProcessor
         x, y = self.get_features_and_target_to_train()
 
         x_train, x_test, y_train, y_test = train_test_split(x, y,
-                                                            test_size=0.2,
+                                                            test_size=0.3,
                                                             random_state=self.SEED,
                                                             stratify=y)
 
@@ -28,7 +28,7 @@ class ScikitLearnClassifyWorkoutFrequencyDataPreProcessor(CommonDataPreProcessor
         x, y = self.get_features_and_target_to_train()
 
         x_train, x_test, y_train, y_test = train_test_split(x, y,
-                                                            test_size=0.2,
+                                                            test_size=0.3,
                                                             random_state=self.SEED,
                                                             stratify=y)
 

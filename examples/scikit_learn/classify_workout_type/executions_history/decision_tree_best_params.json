@@ -1,35 +1,134 @@
 [
     {
         "estimator": "DecisionTreeClassifier",
-        "mean": 0.29438894438894436,
-        "standard_deviation": 0.06548476948885353,
-        "median": 0.2837995337995338,
-        "variance": 0.004288255035008282,
-        "standard_error": 0.02070810236358774,
+        "mean": 0.2775575447570332,
+        "standard_deviation": 0.035850640776476525,
+        "median": 0.26278772378516624,
+        "variance": 0.0012852684440839612,
+        "standard_error": 0.011336968043017327,
         "min_max_score": [
-            0.1795,
-            0.4359
+            0.25,
+            0.3529
         ],
         "estimator_params": {
             "ccp_alpha": 0.0,
             "class_weight": null,
-            "criterion": "gini",
-            "max_depth": 9,
+            "criterion": "log_loss",
+            "max_depth": 4,
             "max_features": null,
             "max_leaf_nodes": null,
             "min_impurity_decrease": 0.0,
-            "min_samples_leaf": 26,
-            "min_samples_split": 29,
+            "min_samples_leaf": 14,
+            "min_samples_split": 18,
             "min_weight_fraction_leaf": 0.0,
             "monotonic_cst": null,
             "random_state": null,
             "splitter": "random"
         },
         "scoring": "accuracy",
-        "features": "idade, genero, peso, altura, duracao_sessao, frequencia_treino, nivel_experiencia, percentual_gordura",
-        "pre_processing_time": "00:00:00.000",
-        "feature_selection_time": "00:00:00.000",
+        "features": "idade, peso, altura, duracao_sessao, percentual_gordura",
+        "pre_processing_time": "00:00:01.000",
+        "feature_selection_time": "00:00:01.000",
+        "search_time": "00:00:01.000",
+        "validation_time": "00:00:06.000"
+    },
+    {
+        "estimator": "DecisionTreeClassifier",
+        "mean": 0.27016197783461215,
+        "standard_deviation": 0.05724878893999544,
+        "median": 0.2720588235294118,
+        "variance": 0.003277423835096144,
+        "standard_error": 0.018103656633664214,
+        "min_max_score": [
+            0.1765,
+            0.3676
+        ],
+        "estimator_params": {
+            "ccp_alpha": 0.0,
+            "class_weight": null,
+            "criterion": "gini",
+            "max_depth": 3,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 1,
+            "min_samples_split": 17,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "random_state": null,
+            "splitter": "random"
+        },
+        "scoring": "accuracy",
+        "features": "idade, peso, altura, duracao_sessao, percentual_gordura",
+        "pre_processing_time": "00:00:01.000",
+        "feature_selection_time": "00:00:01.000",
         "search_time": "00:00:03.000",
-        "validation_time": "00:00:20.000"
+        "validation_time": "00:00:30.000"
+    },
+    {
+        "estimator": "DecisionTreeClassifier",
+        "mean": 0.2834185848252344,
+        "standard_deviation": 0.05429906041432804,
+        "median": 0.2700341005967605,
+        "variance": 0.0029483879618788468,
+        "standard_error": 0.017170870571636274,
+        "min_max_score": [
+            0.2206,
+            0.4118
+        ],
+        "estimator_params": {
+            "ccp_alpha": 0.0,
+            "class_weight": null,
+            "criterion": "gini",
+            "max_depth": 26,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 25,
+            "min_samples_split": 3,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "random_state": null,
+            "splitter": "random"
+        },
+        "scoring": "accuracy",
+        "features": "idade, peso, altura, percentual_gordura",
+        "pre_processing_time": "00:00:01.000",
+        "feature_selection_time": "00:00:01.000",
+        "search_time": "00:00:05.000",
+        "validation_time": "00:00:59.000"
+    },
+    {
+        "estimator": "DecisionTreeClassifier",
+        "mean": 0.23635976129582273,
+        "standard_deviation": 0.03702003704296037,
+        "median": 0.2426470588235294,
+        "variance": 0.0013704831426621577,
+        "standard_error": 0.011706763611955944,
+        "min_max_score": [
+            0.1618,
+            0.2941
+        ],
+        "estimator_params": {
+            "ccp_alpha": 0.0,
+            "class_weight": null,
+            "criterion": "log_loss",
+            "max_depth": 4,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 14,
+            "min_samples_split": 18,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "random_state": null,
+            "splitter": "random"
+        },
+        "scoring": "accuracy",
+        "features": "idade, genero, peso, altura, duracao_sessao, frequencia_treino, percentual_gordura",
+        "pre_processing_time": "00:00:01.000",
+        "feature_selection_time": "00:00:01.000",
+        "search_time": "00:00:05.000",
+        "validation_time": "00:00:56.000"
     }
 ]

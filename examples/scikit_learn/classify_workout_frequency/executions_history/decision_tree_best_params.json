@@ -1,35 +1,101 @@
 [
     {
         "estimator": "DecisionTreeClassifier",
-        "mean": 0.4807026307026307,
-        "standard_deviation": 0.03959438724468325,
-        "median": 0.48717948717948717,
-        "variance": 0.0015677155012819356,
-        "standard_error": 0.012520844625191766,
+        "mean": 0.48748934356351237,
+        "standard_deviation": 0.027118493208690128,
+        "median": 0.5,
+        "variance": 0.0007354126739097726,
+        "standard_error": 0.00857562052512687,
         "min_max_score": [
-            0.4231,
-            0.5256
+            0.4412,
+            0.5147
         ],
         "estimator_params": {
             "ccp_alpha": 0.0,
             "class_weight": null,
-            "criterion": "log_loss",
-            "max_depth": 5,
+            "criterion": "gini",
+            "max_depth": 22,
             "max_features": null,
             "max_leaf_nodes": null,
             "min_impurity_decrease": 0.0,
-            "min_samples_leaf": 13,
-            "min_samples_split": 8,
+            "min_samples_leaf": 7,
+            "min_samples_split": 27,
             "min_weight_fraction_leaf": 0.0,
             "monotonic_cst": null,
             "random_state": null,
             "splitter": "best"
         },
         "scoring": "accuracy",
-        "features": "idade, genero, peso, altura, duracao_sessao, tipo_treino, nivel_experiencia, percentual_gordura",
-        "pre_processing_time": "00:00:00.000",
-        "feature_selection_time": "00:00:00.000",
-        "search_time": "00:00:04.000",
-        "validation_time": "00:00:22.000"
+        "features": "peso, altura, nivel_experiencia, percentual_gordura",
+        "pre_processing_time": "00:00:01.000",
+        "feature_selection_time": "00:00:01.000",
+        "search_time": "00:00:01.000",
+        "validation_time": "00:00:13.000"
+    },
+    {
+        "estimator": "DecisionTreeClassifier",
+        "mean": 0.5021952259164535,
+        "standard_deviation": 0.04720106599838952,
+        "median": 0.5,
+        "variance": 0.002227940631384323,
+        "standard_error": 0.014926287654284043,
+        "min_max_score": [
+            0.4265,
+            0.6029
+        ],
+        "estimator_params": {
+            "ccp_alpha": 0.0,
+            "class_weight": null,
+            "criterion": "entropy",
+            "max_depth": 22,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 12,
+            "min_samples_split": 26,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "random_state": null,
+            "splitter": "random"
+        },
+        "scoring": "accuracy",
+        "features": "peso, altura, nivel_experiencia, percentual_gordura",
+        "pre_processing_time": "00:00:01.000",
+        "feature_selection_time": "00:00:01.000",
+        "search_time": "00:00:03.000",
+        "validation_time": "00:00:34.000"
+    },
+    {
+        "estimator": "DecisionTreeClassifier",
+        "mean": 0.4653026427962489,
+        "standard_deviation": 0.05410597609589274,
+        "median": 0.45588235294117646,
+        "variance": 0.0029274566492893165,
+        "standard_error": 0.017109811948964593,
+        "min_max_score": [
+            0.3824,
+            0.5942
+        ],
+        "estimator_params": {
+            "ccp_alpha": 0.0,
+            "class_weight": null,
+            "criterion": "log_loss",
+            "max_depth": 20,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 9,
+            "min_samples_split": 12,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "random_state": null,
+            "splitter": "random"
+        },
+        "scoring": "accuracy",
+        "features": "peso, altura, duracao_sessao, nivel_experiencia, percentual_gordura",
+        "pre_processing_time": "00:00:01.000",
+        "feature_selection_time": "00:00:01.000",
+        "search_time": "00:00:05.000",
+        "validation_time": "00:01:05.000"
     }
 ]

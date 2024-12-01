@@ -1,0 +1,86 @@
+[
+    {
+        "estimator": "KNeighborsClassifier",
+        "mean": 0.4817988064791134,
+        "standard_deviation": 0.04283741138343922,
+        "median": 0.4852941176470588,
+        "variance": 0.001835043814034008,
+        "standard_error": 0.013546378903729245,
+        "min_max_score": [
+            0.3768,
+            0.5441
+        ],
+        "estimator_params": {
+            "algorithm": "auto",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": null,
+            "n_neighbors": 16,
+            "p": 2,
+            "weights": "uniform"
+        },
+        "scoring": "accuracy",
+        "features": "altura, duracao_sessao, tipo_treino, nivel_experiencia, percentual_gordura",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:02.000",
+        "validation_time": "00:00:31.000"
+    },
+    {
+        "estimator": "KNeighborsClassifier",
+        "mean": 0.5037297527706734,
+        "standard_deviation": 0.04974565631786195,
+        "median": 0.49264705882352944,
+        "variance": 0.002474630322494839,
+        "standard_error": 0.015730957766438885,
+        "min_max_score": [
+            0.4412,
+            0.6176
+        ],
+        "estimator_params": {
+            "algorithm": "brute",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": null,
+            "n_neighbors": 6,
+            "p": 2,
+            "weights": "distance"
+        },
+        "scoring": "accuracy",
+        "features": "altura, duracao_sessao, tipo_treino, nivel_experiencia, percentual_gordura",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:05.000",
+        "validation_time": "00:01:18.000"
+    },
+    {
+        "estimator": "KNeighborsClassifier",
+        "mean": 0.4934143222506394,
+        "standard_deviation": 0.05793068230527845,
+        "median": 0.4817774936061381,
+        "variance": 0.003355963952355102,
+        "standard_error": 0.01831929024922937,
+        "min_max_score": [
+            0.4265,
+            0.6176
+        ],
+        "estimator_params": {
+            "algorithm": "brute",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": null,
+            "n_neighbors": 19,
+            "p": 2,
+            "weights": "distance"
+        },
+        "scoring": "accuracy",
+        "features": "altura, duracao_sessao, tipo_treino, nivel_experiencia, percentual_gordura",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:08.000",
+        "validation_time": "00:02:34.000"
+    }
+]

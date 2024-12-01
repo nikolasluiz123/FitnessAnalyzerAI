@@ -3,7 +3,10 @@ from tabulate import tabulate
 
 from analyze.scikit_learn.classify_workout_type.agent import ScikitLearnClassifyWorkoutTypeAgent
 
-suggestor = ScikitLearnClassifyWorkoutTypeAgent(force_execute_best_model_search=False)
+suggestor = ScikitLearnClassifyWorkoutTypeAgent(
+    history_index=-1,
+    force_execute_additional_validation=True
+)
 
 data = {
     'idade': [22, 35, 29, 40, 19, 27, 33, 45, 30, 26, 50, 38, 24, 31, 36, 28, 21, 44, 32, 23],
