@@ -39,6 +39,26 @@ No [diretório de validações adicionais da sugestão de repetições](https://
 
 No [diretório de validações adicionais da sugestão de peso](https://github.com/nikolasluiz123/FitnessAnalyzerAI/tree/master/examples/scikit_learn/weight_suggestor/additional_validations) podem ser encontrados dados gráficos e relatórios com algumas métricas de regressão.
 
+### Classificação de Tipos de Treinamento
+
+Nesse exemplo foi utilizado o [seguinte dataset](https://www.kaggle.com/datasets/valakhorasani/gym-members-exercise-dataset). O objetivo foi realizar a sugestão de um tipo de treino baseado em alguns dos dados desse dataset que faziam sentido.
+
+A ideia é passarmos os seguintes dados: Idade, Gênero, Peso, Altura, Duração do Treino, Frequência Semanal, Nível de Experiência e Percentual de Gordura. Com essas informações presentes no dataset utilizado seria possível classificar o Tipo de Treino.
+
+A classificação pode ser observada [aqui](https://github.com/nikolasluiz123/FitnessAnalyzerAI/blob/master/examples/scikit_learn/classify_workout_type/example_classify_workout_type.py).
+
+No [diretório de validações adicionais da classificação do tipo de treino](https://github.com/nikolasluiz123/FitnessAnalyzerAI/tree/master/examples/scikit_learn/classify_workout_type/additional_validations) podem ser encontradas as validações realizadas.
+
+### Classificação de Frequência de Treinamento
+
+Nesse exemplo foi utilizado o [seguinte dataset](https://www.kaggle.com/datasets/valakhorasani/gym-members-exercise-dataset). O objetivo foi realizar a sugestão de um tipo de treino baseado em alguns dos dados desse dataset que faziam sentido.
+
+A ideia é passarmos os seguintes dados: Idade, Gênero, Peso, Altura, Duração do Treino, Tipo de Treino, Nível de Experiência e Percentual de Gordura. Com essas informações presentes no dataset utilizado seria possível classificar o Tipo de Treino.
+
+A classificação pode ser observada [aqui](https://github.com/nikolasluiz123/FitnessAnalyzerAI/blob/master/examples/scikit_learn/classify_workout_frequency/example_classify_workout_frequency.py).
+
+No [diretório de validações adicionais da classificação do tipo de treino](https://github.com/nikolasluiz123/FitnessAnalyzerAI/tree/master/examples/scikit_learn/classify_workout_frequency/additional_validations) podem ser encontradas as validações realizadas.
+
 ### Sugestões de Repetições e Peso usando Tensorflow e Keras
 
 Como a implementação utilizando Scikit-Learn não chegou no ponto que gostaria foi preciso abordar o problema
