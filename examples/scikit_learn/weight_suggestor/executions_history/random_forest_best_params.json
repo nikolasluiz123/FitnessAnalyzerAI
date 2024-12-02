@@ -1,29 +1,29 @@
 [
     {
         "estimator": "RandomForestRegressor",
-        "mean": -18.97042181768996,
-        "standard_deviation": 1.0350164415419223,
-        "median": -18.7438600148187,
-        "variance": 1.0712590342621033,
-        "standard_error": 0.3273009370994992,
+        "mean": -18.604387713833596,
+        "standard_deviation": 0.9444749140316343,
+        "median": -18.653245791416456,
+        "variance": 0.892032863235063,
+        "standard_error": 0.2986691921231688,
         "min_max_score": [
-            -20.2099,
-            -17.1626
+            -20.0219,
+            -16.8519
         ],
         "estimator_params": {
             "bootstrap": true,
             "ccp_alpha": 0.0,
             "criterion": "absolute_error",
-            "max_depth": 15,
-            "max_features": "log2",
+            "max_depth": 23,
+            "max_features": null,
             "max_leaf_nodes": null,
             "max_samples": null,
             "min_impurity_decrease": 0.0,
-            "min_samples_leaf": 1,
-            "min_samples_split": 10,
+            "min_samples_leaf": 2,
+            "min_samples_split": 5,
             "min_weight_fraction_leaf": 0.0,
             "monotonic_cst": null,
-            "n_estimators": 290,
+            "n_estimators": 90,
             "n_jobs": null,
             "oob_score": false,
             "random_state": null,
@@ -34,7 +34,7 @@
         "features": "exercicio, repeticoes, serie",
         "pre_processing_time": "00:00:00.000",
         "feature_selection_time": "00:00:00.000",
-        "search_time": "00:00:34.000",
-        "validation_time": "00:03:15.000"
+        "search_time": "00:13:38.000",
+        "validation_time": "00:44:15.000"
     }
 ]

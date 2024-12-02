@@ -5,7 +5,7 @@ from analyze.scikit_learn.classify_workout_type.agent import ScikitLearnClassify
 
 suggestor = ScikitLearnClassifyWorkoutTypeAgent(
     history_index=-1,
-    force_execute_additional_validation=True
+    force_execute_additional_validation=False
 )
 
 data = {

@@ -4,8 +4,8 @@ from tabulate import tabulate
 from analyze.scikit_learn.weight_suggestor.agent import ScikitLearnWeightSuggestorAgent
 
 suggestor = ScikitLearnWeightSuggestorAgent(
-    force_execute_best_model_search=False,
-    data_path='../../../data/workout_evolution/weightlifting_721_workouts.csv'
+    history_index=-1,
+    force_execute_additional_validation=False
 )
 
 dict_teste = {

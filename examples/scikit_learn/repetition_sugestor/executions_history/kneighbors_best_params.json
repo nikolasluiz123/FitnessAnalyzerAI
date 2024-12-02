@@ -1,14 +1,14 @@
 [
     {
         "estimator": "KNeighborsRegressor",
-        "mean": -1.199986866041343,
-        "standard_deviation": 0.10289749720829601,
-        "median": -1.1558451245708643,
-        "variance": 0.010587894931731286,
-        "standard_error": 0.032539045670903266,
+        "mean": -1.1954108391593614,
+        "standard_deviation": 0.07918715534595822,
+        "median": -1.165224233683067,
+        "variance": 0.006270605571784919,
+        "standard_error": 0.02504117723228067,
         "min_max_score": [
-            -1.3913,
-            -1.0757
+            -1.3716,
+            -1.1126
         ],
         "estimator_params": {
             "algorithm": "auto",
@@ -16,7 +16,7 @@
             "metric": "minkowski",
             "metric_params": null,
             "n_jobs": null,
-            "n_neighbors": 6,
+            "n_neighbors": 14,
             "p": 2,
             "weights": "distance"
         },
@@ -24,7 +24,91 @@
         "features": "exercicio, peso, serie",
         "pre_processing_time": "00:00:00.000",
         "feature_selection_time": "00:00:00.000",
-        "search_time": "00:00:00.000",
-        "validation_time": "00:00:03.000"
+        "search_time": "00:00:06.000",
+        "validation_time": "00:01:06.000"
+    },
+    {
+        "estimator": "KNeighborsRegressor",
+        "mean": -1.1897188916329977,
+        "standard_deviation": 0.10804633674836456,
+        "median": -1.15599128483468,
+        "variance": 0.011674010884740993,
+        "standard_error": 0.034167251696238306,
+        "min_max_score": [
+            -1.4504,
+            -1.0798
+        ],
+        "estimator_params": {
+            "algorithm": "brute",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": null,
+            "n_neighbors": 15,
+            "p": 2,
+            "weights": "distance"
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio, peso, serie",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:12.000",
+        "validation_time": "00:02:08.000"
+    },
+    {
+        "estimator": "KNeighborsRegressor",
+        "mean": -1.1964422344602934,
+        "standard_deviation": 0.09899211467235604,
+        "median": -1.1539713333295034,
+        "variance": 0.009799438767304889,
+        "standard_error": 0.03130405527612179,
+        "min_max_score": [
+            -1.371,
+            -1.0874
+        ],
+        "estimator_params": {
+            "algorithm": "auto",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": null,
+            "n_neighbors": 8,
+            "p": 2,
+            "weights": "uniform"
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio, peso, serie",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:07.000",
+        "validation_time": "00:00:51.000"
+    },
+    {
+        "estimator": "KNeighborsRegressor",
+        "mean": -1.1760946009108695,
+        "standard_deviation": 0.08408735493356967,
+        "median": -1.1444290733735614,
+        "variance": 0.007070683259724123,
+        "standard_error": 0.026590756400907672,
+        "min_max_score": [
+            -1.3518,
+            -1.0828
+        ],
+        "estimator_params": {
+            "algorithm": "auto",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": null,
+            "n_neighbors": 7,
+            "p": 2,
+            "weights": "distance"
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio, peso, serie",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:26.000",
+        "validation_time": "00:03:59.000"
     }
 ]

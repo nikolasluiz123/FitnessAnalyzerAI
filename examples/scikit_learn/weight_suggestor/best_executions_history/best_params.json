@@ -1,34 +1,40 @@
 [
     {
-        "estimator": "DecisionTreeRegressor",
-        "mean": -18.835833855583175,
-        "standard_deviation": 0.9194873883862696,
-        "median": -18.952411163893128,
-        "variance": 0.8454570574014026,
-        "standard_error": 0.2907674427100466,
+        "estimator": "RandomForestRegressor",
+        "mean": -18.604387713833596,
+        "standard_deviation": 0.9444749140316343,
+        "median": -18.653245791416456,
+        "variance": 0.892032863235063,
+        "standard_error": 0.2986691921231688,
         "min_max_score": [
-            -20.0353,
-            -16.8148
+            -20.0219,
+            -16.8519
         ],
         "estimator_params": {
+            "bootstrap": true,
             "ccp_alpha": 0.0,
             "criterion": "absolute_error",
-            "max_depth": 30,
+            "max_depth": 23,
             "max_features": null,
             "max_leaf_nodes": null,
+            "max_samples": null,
             "min_impurity_decrease": 0.0,
             "min_samples_leaf": 2,
-            "min_samples_split": 10,
+            "min_samples_split": 5,
             "min_weight_fraction_leaf": 0.0,
             "monotonic_cst": null,
+            "n_estimators": 90,
+            "n_jobs": null,
+            "oob_score": false,
             "random_state": null,
-            "splitter": "best"
+            "verbose": 0,
+            "warm_start": false
         },
         "scoring": "neg_mean_absolute_error",
         "features": "exercicio,  repeticoes,  serie",
         "pre_processing_time": "00:00:00.000",
         "feature_selection_time": "00:00:00.000",
-        "search_time": "00:00:00.000",
-        "validation_time": "00:00:03.000"
+        "search_time": "00:13:38.000",
+        "validation_time": "00:44:15.000"
     }
 ]

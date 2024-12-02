@@ -1,3 +1,4 @@
+import kagglehub
 import pandas as pd
 from pandas import DataFrame
 from sklearn.model_selection import train_test_split
@@ -6,10 +7,6 @@ from wrappers.common.data_pre_processor.common_data_pre_processor import CommonD
 
 
 class ScikitLearnWeightSuggestorDataPreProcessor(CommonDataPreProcessor):
-
-    def __init__(self, data_path: str):
-        super().__init__()
-        self.data_path = data_path
 
     def get_data_to_prediction(self, data_frame: DataFrame):
         """
@@ -36,7 +33,9 @@ class ScikitLearnWeightSuggestorDataPreProcessor(CommonDataPreProcessor):
         Função para obter os dados subdivididos em treino e teste realizando todos os tratamentos julgados como
         necessários.
         """
-        data_frame = pd.read_csv(self.data_path)
+        path = kagglehub.dataset_download("joep89/weightlifting")
+
+        data_frame = pd.read_csv(f'{path}/weightlifting_721_workouts.csv')
         data_frame = self.__remove_unused_columns(data_frame)
         data_frame = self.__rename_columns(data_frame)
 

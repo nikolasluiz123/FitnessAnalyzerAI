@@ -7,8 +7,7 @@ class CommonAgent(ABC):
     """
     def __init__(self,
                  history_index: int | None,
-                 force_execute_additional_validation: bool,
-                 data_path: str = None):
+                 force_execute_additional_validation: bool):
         """
         :param force_execute_best_model_search: Flag que indica se deve ser executado obrigatoriamente o processo de
         treinamento. Normalmente, após treinar o modelo, o intuito é utilizar a implementação com essa flag false e apenas
@@ -18,7 +17,6 @@ class CommonAgent(ABC):
         """
         self.history_index = history_index
         self._force_execute_additional_validation = force_execute_additional_validation
-        self.data_path = data_path
         self._data_pre_processor = None
         self._process_manager = None
 

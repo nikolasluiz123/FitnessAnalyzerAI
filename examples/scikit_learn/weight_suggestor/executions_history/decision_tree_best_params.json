@@ -1,24 +1,24 @@
 [
     {
         "estimator": "DecisionTreeRegressor",
-        "mean": -18.835833855583175,
-        "standard_deviation": 0.9194873883862696,
-        "median": -18.952411163893128,
-        "variance": 0.8454570574014026,
-        "standard_error": 0.2907674427100466,
+        "mean": -18.622565987223886,
+        "standard_deviation": 0.8034477211180087,
+        "median": -18.86270988335878,
+        "variance": 0.6455282405697215,
+        "standard_error": 0.2540724779604673,
         "min_max_score": [
-            -20.0353,
-            -16.8148
+            -19.6479,
+            -17.0479
         ],
         "estimator_params": {
             "ccp_alpha": 0.0,
             "criterion": "absolute_error",
-            "max_depth": 30,
+            "max_depth": 29,
             "max_features": null,
             "max_leaf_nodes": null,
             "min_impurity_decrease": 0.0,
             "min_samples_leaf": 2,
-            "min_samples_split": 10,
+            "min_samples_split": 11,
             "min_weight_fraction_leaf": 0.0,
             "monotonic_cst": null,
             "random_state": null,
@@ -28,7 +28,7 @@
         "features": "exercicio, repeticoes, serie",
         "pre_processing_time": "00:00:00.000",
         "feature_selection_time": "00:00:00.000",
-        "search_time": "00:00:00.000",
-        "validation_time": "00:00:03.000"
+        "search_time": "00:00:23.000",
+        "validation_time": "00:02:30.000"
     }
 ]
