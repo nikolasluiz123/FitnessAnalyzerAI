@@ -36,5 +36,75 @@
         "feature_selection_time": "00:00:00.000",
         "search_time": "00:13:38.000",
         "validation_time": "00:44:15.000"
+    },
+    {
+        "estimator": "DecisionTreeRegressor",
+        "mean": -18.659234548753084,
+        "standard_deviation": 0.8822402384799533,
+        "median": -18.916050225038166,
+        "variance": 0.7783478383931648,
+        "standard_error": 0.27898885970467796,
+        "min_max_score": [
+            -19.6975,
+            -16.9839
+        ],
+        "estimator_params": {
+            "ccp_alpha": 0.0,
+            "criterion": "absolute_error",
+            "max_depth": 14,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 2,
+            "min_samples_split": 12,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "random_state": null,
+            "splitter": "best"
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio,  repeticoes,  serie",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:21.000",
+        "validation_time": "00:03:05.000"
+    },
+    {
+        "estimator": "RandomForestRegressor",
+        "mean": -18.929747191459327,
+        "standard_deviation": 0.520387102703842,
+        "median": -19.099041558689574,
+        "variance": 0.27080273666049903,
+        "standard_error": 0.23272418725199107,
+        "min_max_score": [
+            -19.4079,
+            -17.9471
+        ],
+        "estimator_params": {
+            "bootstrap": true,
+            "ccp_alpha": 0.0,
+            "criterion": "absolute_error",
+            "max_depth": 11,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "max_samples": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 3,
+            "min_samples_split": 12,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "n_estimators": 30,
+            "n_jobs": null,
+            "oob_score": false,
+            "random_state": null,
+            "verbose": 0,
+            "warm_start": false
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio,  repeticoes,  serie",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:02:09.000",
+        "validation_time": "00:05:54.000"
     }
 ]

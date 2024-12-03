@@ -26,5 +26,61 @@
         "feature_selection_time": "00:00:00.000",
         "search_time": "00:00:30.000",
         "validation_time": "00:06:42.000"
+    },
+    {
+        "estimator": "KNeighborsRegressor",
+        "mean": -20.901426284184396,
+        "standard_deviation": 1.1739859724092199,
+        "median": -21.02728243283463,
+        "variance": 1.3782430634136216,
+        "standard_error": 0.37124696139007274,
+        "min_max_score": [
+            -22.7742,
+            -18.8662
+        ],
+        "estimator_params": {
+            "algorithm": "auto",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": null,
+            "n_neighbors": 7,
+            "p": 2,
+            "weights": "uniform"
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio, repeticoes, serie",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:35.000",
+        "validation_time": "00:11:44.000"
+    },
+    {
+        "estimator": "KNeighborsRegressor",
+        "mean": -21.26143038622076,
+        "standard_deviation": 0.8408902819355417,
+        "median": -21.340836280276125,
+        "variance": 0.7070964662536348,
+        "standard_error": 0.3760575664053669,
+        "min_max_score": [
+            -22.2753,
+            -19.8731
+        ],
+        "estimator_params": {
+            "algorithm": "ball_tree",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": null,
+            "n_neighbors": 9,
+            "p": 2,
+            "weights": "distance"
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio, repeticoes, serie",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:14.000",
+        "validation_time": "00:01:36.000"
     }
 ]

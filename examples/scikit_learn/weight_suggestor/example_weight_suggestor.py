@@ -4,8 +4,8 @@ from tabulate import tabulate
 from analyze.scikit_learn.weight_suggestor.agent import ScikitLearnWeightSuggestorAgent
 
 suggestor = ScikitLearnWeightSuggestorAgent(
-    history_index=-1,
-    force_execute_additional_validation=False
+    history_index=None,
+    force_execute_additional_validation=True
 )
 
 dict_teste = {

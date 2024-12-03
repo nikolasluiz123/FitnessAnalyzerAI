@@ -22,46 +22,43 @@ class ScikitLearnWeightSuggestorAgent(CommonAgent):
 
     def _initialize_multi_process_manager(self):
         params_searcher_decision_tree = ScikitLearnHalvingRandomCVHyperParamsSearcher(
-            number_candidates=1000,
+            number_candidates=2000,
             min_resources=300,
             max_resources=8000,
             resource='n_samples',
-            log_level=1,
-            n_jobs=4
+            log_level=1
         )
 
         params_searcher_random_forest = ScikitLearnHalvingRandomCVHyperParamsSearcher(
-            number_candidates=250,
+            number_candidates=300,
             min_resources=10,
-            max_resources=100,
+            max_resources=50,
             resource='n_estimators',
-            log_level=1,
-            n_jobs=4
+            log_level=1
         )
 
         params_searcher_kneighbors = ScikitLearnHalvingRandomCVHyperParamsSearcher(
-            number_candidates=1000,
+            number_candidates=2000,
             min_resources=300,
             max_resources=8000,
             resource='n_samples',
-            log_level=1,
-            n_jobs=4
+            log_level=1
         )
 
         cross_validator = ScikitLearnCrossValidator(
-            log_level=1,
-            n_jobs=4
+            log_level=1
         )
 
         pipelines = [
             ScikitLearnPipeline(
                 estimator=RandomForestRegressor(),
                 params={
-                    'criterion': ['squared_error', 'absolute_error'],
+                    'criterion': ['squared_error', 'absolute_error', 'friedman_mse', 'poisson'],
                     'max_depth': randint(2, 30),
                     'min_samples_split': randint(2, 20),
                     'min_samples_leaf': randint(2, 20),
-                    'max_features': ['sqrt', 'log2', None]
+                    'max_features': [None],
+                    'bootstrap': [True, False]
                 },
                 data_pre_processor=self._data_pre_processor,
                 feature_searcher=None,
@@ -77,9 +74,9 @@ class ScikitLearnWeightSuggestorAgent(CommonAgent):
             ScikitLearnPipeline(
                 estimator=KNeighborsRegressor(),
                 params={
-                    'n_neighbors': randint(1, 20),
+                    'n_neighbors': randint(1, 30),
                     'weights': ['uniform', 'distance'],
-                    'algorithm': ['auto', 'brute'],
+                    'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute'],
                 },
                 data_pre_processor=self._data_pre_processor,
                 feature_searcher=None,
@@ -95,11 +92,11 @@ class ScikitLearnWeightSuggestorAgent(CommonAgent):
             ScikitLearnPipeline(
                 estimator=DecisionTreeRegressor(),
                 params={
-                    'criterion': ['squared_error', 'absolute_error'],
+                    'criterion': ['squared_error', 'absolute_error', 'friedman_mse', 'poisson'],
                     'max_depth': randint(2, 30),
                     'min_samples_split': randint(2, 20),
                     'min_samples_leaf': randint(2, 20),
-                    'max_features': ['sqrt', 'log2', None]
+                    'max_features': [None]
                 },
                 data_pre_processor=self._data_pre_processor,
                 feature_searcher=None,
@@ -122,7 +119,7 @@ class ScikitLearnWeightSuggestorAgent(CommonAgent):
                 best_params_file_name='best_params',
                 cv_results_file_name='best_cv_results'
             ),
-            fold_splits=10,
+            fold_splits=5,
             scoring='neg_mean_absolute_error',
             history_index=self.history_index,
             save_history=True

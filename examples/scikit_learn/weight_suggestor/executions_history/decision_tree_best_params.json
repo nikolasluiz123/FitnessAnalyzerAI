@@ -30,5 +30,69 @@
         "feature_selection_time": "00:00:00.000",
         "search_time": "00:00:23.000",
         "validation_time": "00:02:30.000"
+    },
+    {
+        "estimator": "DecisionTreeRegressor",
+        "mean": -18.659234548753084,
+        "standard_deviation": 0.8822402384799533,
+        "median": -18.916050225038166,
+        "variance": 0.7783478383931648,
+        "standard_error": 0.27898885970467796,
+        "min_max_score": [
+            -19.6975,
+            -16.9839
+        ],
+        "estimator_params": {
+            "ccp_alpha": 0.0,
+            "criterion": "absolute_error",
+            "max_depth": 14,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 2,
+            "min_samples_split": 12,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "random_state": null,
+            "splitter": "best"
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio, repeticoes, serie",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:21.000",
+        "validation_time": "00:03:05.000"
+    },
+    {
+        "estimator": "DecisionTreeRegressor",
+        "mean": -18.99128382169396,
+        "standard_deviation": 0.6617642952194058,
+        "median": -19.226920887251907,
+        "variance": 0.4379319824272369,
+        "standard_error": 0.2959499898385661,
+        "min_max_score": [
+            -19.788,
+            -17.9309
+        ],
+        "estimator_params": {
+            "ccp_alpha": 0.0,
+            "criterion": "absolute_error",
+            "max_depth": 21,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 3,
+            "min_samples_split": 15,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "random_state": null,
+            "splitter": "best"
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio, repeticoes, serie",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:08.000",
+        "validation_time": "00:00:54.000"
     }
 ]

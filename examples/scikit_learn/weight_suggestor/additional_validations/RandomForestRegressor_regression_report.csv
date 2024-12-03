@@ -1,6 +1,6 @@
 ,Métrica,Valor
-0,Mean Absolute Error (MAE),19.35884681238338
-1,Mean Squared Error (MSE),1692.0229018721586
-2,Root Mean Squared Error (RMSE),41.13420598324658
-3,R² Score,-0.10798453670099217
-4,Explained Variance,-0.10204736407614834
+0,Mean Absolute Error (MAE),18.91738330076336
+1,Mean Squared Error (MSE),1620.1698663833158
+2,Root Mean Squared Error (RMSE),40.251333721795056
+3,R² Score,-0.0604995992734223
+4,Explained Variance,-0.054527144642166014
