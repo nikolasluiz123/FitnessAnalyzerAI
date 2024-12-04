@@ -94,5 +94,37 @@
         "feature_selection_time": "00:00:00.000",
         "search_time": "00:00:08.000",
         "validation_time": "00:00:54.000"
+    },
+    {
+        "estimator": "DecisionTreeRegressor",
+        "mean": -16.41527955897156,
+        "standard_deviation": 1.4271009511621715,
+        "median": -16.46564929007634,
+        "variance": 2.0366171248079747,
+        "standard_error": 0.6382189475106446,
+        "min_max_score": [
+            -18.3986,
+            -14.5248
+        ],
+        "estimator_params": {
+            "ccp_alpha": 0.0,
+            "criterion": "absolute_error",
+            "max_depth": 10,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 9,
+            "min_samples_split": 8,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "random_state": null,
+            "splitter": "best"
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio, repeticoes, serie, dia_da_semana, dias_desde_inicio",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:10.000",
+        "validation_time": "00:01:07.000"
     }
 ]

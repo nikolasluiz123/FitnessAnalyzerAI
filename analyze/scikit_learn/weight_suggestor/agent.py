@@ -24,7 +24,7 @@ class ScikitLearnWeightSuggestorAgent(CommonAgent):
         params_searcher_decision_tree = ScikitLearnHalvingRandomCVHyperParamsSearcher(
             number_candidates=2000,
             min_resources=300,
-            max_resources=8000,
+            max_resources=4000,
             resource='n_samples',
             log_level=1
         )
@@ -32,7 +32,7 @@ class ScikitLearnWeightSuggestorAgent(CommonAgent):
         params_searcher_random_forest = ScikitLearnHalvingRandomCVHyperParamsSearcher(
             number_candidates=300,
             min_resources=10,
-            max_resources=50,
+            max_resources=100,
             resource='n_estimators',
             log_level=1
         )
@@ -40,7 +40,7 @@ class ScikitLearnWeightSuggestorAgent(CommonAgent):
         params_searcher_kneighbors = ScikitLearnHalvingRandomCVHyperParamsSearcher(
             number_candidates=2000,
             min_resources=300,
-            max_resources=8000,
+            max_resources=4000,
             resource='n_samples',
             log_level=1
         )
@@ -132,9 +132,14 @@ class ScikitLearnWeightSuggestorAgent(CommonAgent):
             for pipe in self._process_manager.pipelines:
                 model = pipe.history_manager.get_saved_model(pipe.history_manager.get_history_len())
 
+                if self.history_index is not None:
+                    history_length = self.history_index + 1
+                else:
+                    history_length = pipe.history_manager.get_history_len()
+
                 additional_validator = ScikitLearnRegressorAdditionalValidator(
                     estimator=model,
-                    prefix_file_names=type(model).__name__,
+                    prefix_file_names=f'{type(model).__name__}_{history_length}',
                     validation_results_directory='additional_validations',
                     data=validation_data,
                     show_graphics=False

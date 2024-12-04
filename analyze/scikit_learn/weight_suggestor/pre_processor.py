@@ -1,3 +1,5 @@
+import datetime
+
 import kagglehub
 import pandas as pd
 from pandas import DataFrame
@@ -17,6 +19,7 @@ class ScikitLearnWeightSuggestorDataPreProcessor(CommonDataPreProcessor):
 
         label_encoder = LabelEncoder()
         data_frame['exercicio'] = label_encoder.fit_transform(data_frame['exercicio'])
+        data_frame = self.__create_data_informations(data_frame)
 
         return data_frame.drop(columns=['data'], errors='ignore')
 
@@ -267,7 +270,7 @@ class ScikitLearnWeightSuggestorDataPreProcessor(CommonDataPreProcessor):
         data_frame['exercicio'] = label_encoder.fit_transform(data_frame['exercicio'])
 
     def get_features_list(self) -> list[str]:
-        return ['exercicio', 'repeticoes', 'serie']
+        return ['exercicio', 'repeticoes', 'serie', 'dia_da_semana', 'dias_desde_inicio']
 
     def get_target(self) -> str:
         return 'peso'

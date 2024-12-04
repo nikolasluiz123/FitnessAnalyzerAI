@@ -1,3 +1,5 @@
+import datetime
+
 import pandas as pd
 from tabulate import tabulate
 
@@ -8,7 +10,10 @@ suggestor = ScikitLearnWeightSuggestorAgent(
     force_execute_additional_validation=True
 )
 
+now = datetime.datetime.now()
+
 dict_teste = {
+    'data': [now, now, now, now, now, now],
     'exercicio': ['Supino com Barra', 'Supino com Barra', 'Supino com Barra', 'Supino com Barra', 'Supino com Barra', 'Supino com Barra'],
     'repeticoes': [15, 12, 10, 8, 6, 4],
     'serie': [1, 2, 3, 4, 5, 6],
