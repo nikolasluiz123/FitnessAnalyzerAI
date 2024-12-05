@@ -131,12 +131,16 @@ class ScikitLearnClassifyWorkoutTypeAgent(CommonAgent):
             x, y = self._data_pre_processor.get_data_additional_validation()
 
             for pipe in self._process_manager.pipelines:
-                last_history = pipe.history_manager.get_dictionary_from_params_json(-1)
+                if self.history_index is not None:
+                    history_length = self.history_index + 1
+                else:
+                    history_length = pipe.history_manager.get_history_len()
+
+                model = pipe.history_manager.get_saved_model(history_length)
+
+                last_history = pipe.history_manager.get_dictionary_from_params_json(history_length - 1)
                 selected_features = last_history['features'].replace(' ', '').split(',')
                 x_features = x[selected_features]
-
-                history_length = pipe.history_manager.get_history_len()
-                model = pipe.history_manager.get_saved_model(history_length)
 
                 additional_validator = ScikitLearnClassifierAdditionalValidator(
                     estimator=model,

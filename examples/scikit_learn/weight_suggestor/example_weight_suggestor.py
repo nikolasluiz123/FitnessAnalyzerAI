@@ -6,7 +6,7 @@ from tabulate import tabulate
 from analyze.scikit_learn.weight_suggestor.agent import ScikitLearnWeightSuggestorAgent
 
 suggestor = ScikitLearnWeightSuggestorAgent(
-    history_index=None,
+    history_index=3,
     force_execute_additional_validation=True
 )
 
