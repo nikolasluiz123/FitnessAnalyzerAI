@@ -10,7 +10,6 @@ suggestor = KerasRepetitionSuggestorAgent(
 )
 
 test_data_pre_processor = KerasRepetitionsSuggestorDataPreProcessor(
-    data_path='../../../data/workout_evolution/weightlifting_721_workouts.csv'
 )
 
 data = test_data_pre_processor.get_data_additional_validation()

@@ -18,70 +18,91 @@ class KerasRepetitionSuggestorAgent(CommonAgent):
     enconstrado.
     """
 
-    def __init__(self, force_execute_best_model_search: bool, data_path: str):
-        super().__init__(force_execute_best_model_search, data_path)
-
     def _initialize_data_pre_processor(self):
-        self._data_pre_processor = KerasRepetitionsSuggestorDataPreProcessor(self.data_path)
+        self._data_pre_processor = KerasRepetitionsSuggestorDataPreProcessor()
 
     def _initialize_multi_process_manager(self):
-        early_stopping_validation = EarlyStopping(monitor='val_loss', patience=30, restore_best_weights=True)
+        early_stopping_validation = EarlyStopping(monitor='val_loss', patience=100, restore_best_weights=True)
 
         validator = KerasBasicRegressorValidator(
-            epochs=200,
+            epochs=300,
             batch_size=KerasRepetitionsSuggestorDataPreProcessor.BATCH_SIZE,
             log_level=1,
             callbacks=[early_stopping_validation]
         )
 
-        params_searcher_1 = KerasHyperBandSearcher(
+        params_searcher_v1 = KerasHyperBandSearcher(
             objective='val_loss',
-            directory='search_params_1',
-            project_name='model_example_1',
-            epochs=15,
+            directory='search_params_V1',
+            project_name='model_V1',
+            epochs=30,
             batch_size=KerasRepetitionsSuggestorDataPreProcessor.BATCH_SIZE,
             log_level=1,
             callbacks=[],
-            max_epochs=20,
+            max_epochs=30,
             factor=3,
             hyper_band_iterations=1
         )
 
-        params_searcher_2 = KerasHyperBandSearcher(
+        params_searcher_v2 = KerasHyperBandSearcher(
             objective='val_loss',
-            directory='search_params_2',
-            project_name='model_example_2',
-            epochs=15,
+            directory='search_params_V2',
+            project_name='model_V2',
+            epochs=30,
             batch_size=KerasRepetitionsSuggestorDataPreProcessor.BATCH_SIZE,
             log_level=1,
             callbacks=[],
-            max_epochs=20,
+            max_epochs=30,
             factor=3,
             hyper_band_iterations=1
         )
 
-        history_manager_model_example_1 = KerasRegressorHistoryManager(output_directory='history_model_example_1',
-                                                                       models_directory='models',
-                                                                       best_params_file_name='best_executions')
+        params_searcher_v3 = KerasHyperBandSearcher(
+            objective='val_loss',
+            directory='search_params_V3',
+            project_name='model_V3',
+            epochs=30,
+            batch_size=KerasRepetitionsSuggestorDataPreProcessor.BATCH_SIZE,
+            log_level=1,
+            callbacks=[],
+            max_epochs=30,
+            factor=3,
+            hyper_band_iterations=1
+        )
 
-        history_manager_model_example_2 = KerasRegressorHistoryManager(output_directory='history_model_example_2',
-                                                                       models_directory='models',
-                                                                       best_params_file_name='best_executions')
+        history_manager_model_v1 = KerasRegressorHistoryManager(output_directory='history_model_V1',
+                                                               models_directory='models',
+                                                               best_params_file_name='best_executions')
+
+        history_manager_model_v2 = KerasRegressorHistoryManager(output_directory='history_model_V2',
+                                                                models_directory='models',
+                                                                best_params_file_name='best_executions')
+
+        history_manager_model_v3 = KerasRegressorHistoryManager(output_directory='history_model_V3',
+                                                                models_directory='models',
+                                                                best_params_file_name='best_executions')
 
         pipelines = [
             KerasPipeline(
                 model=RepetitionSuggestorLSTMV1(),
                 data_pre_processor=self._data_pre_processor,
-                params_searcher=params_searcher_1,
+                params_searcher=params_searcher_v1,
                 validator=validator,
-                history_manager=history_manager_model_example_1
+                history_manager=history_manager_model_v1
             ),
             KerasPipeline(
                 model=RepetitionSuggestorLSTMV2(),
                 data_pre_processor=self._data_pre_processor,
-                params_searcher=params_searcher_2,
+                params_searcher=params_searcher_v2,
                 validator=validator,
-                history_manager=history_manager_model_example_2
+                history_manager=history_manager_model_v2
+            ),
+            KerasPipeline(
+                model=RepetitionSuggestorLSTMV3(),
+                data_pre_processor=self._data_pre_processor,
+                params_searcher=params_searcher_v3,
+                validator=validator,
+                history_manager=history_manager_model_v3
             )
         ]
 
@@ -89,39 +110,38 @@ class KerasRepetitionSuggestorAgent(CommonAgent):
                                                                   models_directory='best_models',
                                                                   best_params_file_name='best_executions')
 
-        if self._force_execute_best_model_search:
-            history_index = None
-        else:
-            history_index = -1
-
         self._process_manager = KerasRegressorMultProcessManager(
             pipelines=pipelines,
             seed=KerasRepetitionsSuggestorDataPreProcessor.SEED,
             history_manager=history_manager_best_model,
-            history_index=history_index,
-            save_history=self._force_execute_best_model_search,
+            history_index=self.history_index,
             delete_trials_after_execution=True
         )
 
     def _execute_additional_validation(self):
-        validation_data = self._data_pre_processor.get_data_additional_validation()
-        validation_data = self._data_pre_processor.get_data_as_numpy(validation_data)
+        if self._force_execute_additional_validation:
+            validation_data = self._data_pre_processor.get_data_additional_validation()
+            validation_data = self._data_pre_processor.get_data_as_numpy(validation_data)
 
-        for pipe in self._process_manager.pipelines:
-            model = pipe.history_manager.get_saved_model(pipe.history_manager.get_history_len())
+            for pipe in self._process_manager.pipelines:
+                if self.history_index is not None:
+                    history_length = self.history_index + 1
+                else:
+                    history_length = pipe.history_manager.get_history_len()
 
-            additional_validator = KerasAdditionalRegressorValidator(model_instance=model,
-                                                                     data=validation_data,
-                                                                     prefix_file_names=type(pipe.model).__name__,
-                                                                     validation_results_directory='additional_validations',
-                                                                     show_graphics=False,
-                                                                     scaler=self._data_pre_processor.scaler_y)
-            additional_validator.validate()
+                model = pipe.history_manager.get_saved_model(history_length)
+
+                additional_validator = KerasAdditionalRegressorValidator(model_instance=model,
+                                                                         data=validation_data,
+                                                                         prefix_file_names=f'{type(model).__name__}_{history_length}',
+                                                                         validation_results_directory='additional_validations',
+                                                                         show_graphics=False,
+                                                                         scaler=self._data_pre_processor.scaler_y)
+                additional_validator.validate()
 
     def _execute_prediction(self, dataset):
         history_len = self._process_manager.history_manager.get_history_len()
         model = self._process_manager.history_manager.get_saved_model(history_len)
 
         predictions = model.predict(self._data_pre_processor.get_data_as_numpy(dataset))
-
         return self._data_pre_processor.scaler_y.inverse_transform(predictions).round().astype(int)

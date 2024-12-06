@@ -1,3 +1,4 @@
+import kagglehub
 import numpy as np
 import pandas as pd
 import tensorflow as tf
@@ -19,7 +20,7 @@ class KerasWeightSuggestorDataPreProcessor(CommonDataPreProcessor):
     Indica quantas features serão utilizadas para sugerir o valor desejado.
     """
 
-    BATCH_SIZE = 128
+    BATCH_SIZE = 256
     """
     Tamanho do batch utilizado nos processos de treinamento das redes neurais.
     """
@@ -29,13 +30,8 @@ class KerasWeightSuggestorDataPreProcessor(CommonDataPreProcessor):
     Valor da seed utilizado nos processos que possuem alguma lógica de randomização.
     """
 
-    def __init__(self, data_path: str):
-        """
-        :param data_path: Caminho para os dados que serão pré-processados
-        """
-
+    def __init__(self):
         super().__init__()
-        self.data_path = data_path
         self.scaler_x = MinMaxScaler()
         self.scaler_y = MinMaxScaler()
 
@@ -76,7 +72,9 @@ class KerasWeightSuggestorDataPreProcessor(CommonDataPreProcessor):
         Função para obter os dados subdivididos em treino e teste realizando todos os tratamentos julgados como
         necessários.
         """
-        data_frame = pd.read_csv(self.data_path)
+        path = kagglehub.dataset_download("joep89/weightlifting")
+
+        data_frame = pd.read_csv(f'{path}/weightlifting_721_workouts.csv')
         data_frame = self.__remove_unused_columns(data_frame)
         data_frame = self.__rename_columns(data_frame)
 
@@ -100,7 +98,9 @@ class KerasWeightSuggestorDataPreProcessor(CommonDataPreProcessor):
         return x_test, x_train, y_test, y_train
 
     def get_test_data_to_create_dataframe(self):
-        data_frame = pd.read_csv(self.data_path)
+        path = kagglehub.dataset_download("joep89/weightlifting")
+
+        data_frame = pd.read_csv(f'{path}/weightlifting_721_workouts.csv')
         data_frame = self.__remove_unused_columns(data_frame)
         data_frame = self.__rename_columns(data_frame)
 

@@ -32,8 +32,7 @@ class ScikitLearnRepetitionSuggestorAgent(CommonAgent):
             min_resources=300,
             max_resources=8000,
             resource='n_samples',
-            log_level=1,
-            n_jobs=4
+            log_level=1
         )
 
         params_searcher_random_forest = ScikitLearnHalvingRandomCVHyperParamsSearcher(
@@ -41,8 +40,7 @@ class ScikitLearnRepetitionSuggestorAgent(CommonAgent):
             min_resources=10,
             max_resources=100,
             resource='n_estimators',
-            log_level=1,
-            n_jobs=4
+            log_level=1
         )
 
         params_searcher_kneighbors = ScikitLearnHalvingRandomCVHyperParamsSearcher(
@@ -50,20 +48,18 @@ class ScikitLearnRepetitionSuggestorAgent(CommonAgent):
             min_resources=300,
             max_resources=8000,
             resource='n_samples',
-            log_level=1,
-            n_jobs=4
+            log_level=1
         )
 
         cross_validator = ScikitLearnCrossValidator(
-            log_level=1,
-            n_jobs=4
+            log_level=1
         )
 
         pipelines = [
             ScikitLearnPipeline(
                 estimator=RandomForestRegressor(),
                 params={
-                    'criterion': ['squared_error', 'absolute_error'],
+                    'criterion': ['squared_error', 'absolute_error', 'friedman_mse', 'poisson'],
                     'max_depth': randint(2, 30),
                     'min_samples_split': randint(2, 20),
                     'min_samples_leaf': randint(2, 20),
@@ -101,11 +97,12 @@ class ScikitLearnRepetitionSuggestorAgent(CommonAgent):
             ScikitLearnPipeline(
                 estimator=DecisionTreeRegressor(),
                 params={
-                    'criterion': ['squared_error', 'absolute_error'],
+                    'criterion': ['squared_error', 'absolute_error', 'friedman_mse', 'poisson'],
                     'max_depth': randint(2, 30),
                     'min_samples_split': randint(2, 20),
                     'min_samples_leaf': randint(2, 20),
-                    'max_features': ['sqrt', 'log2', None]
+                    'max_features': ['sqrt', 'log2', None],
+                    'splitter': ['best', 'random'],
                 },
                 data_pre_processor=self._data_pre_processor,
                 feature_searcher=None,
@@ -147,7 +144,7 @@ class ScikitLearnRepetitionSuggestorAgent(CommonAgent):
 
                 additional_validator = ScikitLearnRegressorAdditionalValidator(
                     estimator=model,
-                    prefix_file_names=type(model).__name__,
+                    prefix_file_names=f'{type(model).__name__}_{history_length}',
                     validation_results_directory='additional_validations',
                     data=validation_data,
                     show_graphics=False

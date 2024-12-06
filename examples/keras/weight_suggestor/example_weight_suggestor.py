@@ -5,13 +5,11 @@ from analyze.keras.weight_suggestor.agent import KerasWeightSuggestorAgent
 from analyze.keras.weight_suggestor.pre_processor import KerasWeightSuggestorDataPreProcessor
 
 suggestor = KerasWeightSuggestorAgent(
-    force_execute_best_model_search=False,
-    data_path='../../../data/workout_evolution/weightlifting_721_workouts.csv'
+    history_index=0,
+    force_execute_additional_validation=True
 )
 
-test_data_pre_processor = KerasWeightSuggestorDataPreProcessor(
-    data_path='../../../data/workout_evolution/weightlifting_721_workouts.csv'
-)
+test_data_pre_processor = KerasWeightSuggestorDataPreProcessor()
 
 data = test_data_pre_processor.get_data_additional_validation()
 predictions = suggestor.execute(data)
