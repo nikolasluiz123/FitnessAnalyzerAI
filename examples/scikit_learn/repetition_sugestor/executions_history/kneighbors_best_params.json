@@ -110,5 +110,33 @@
         "feature_selection_time": "00:00:00.000",
         "search_time": "00:00:26.000",
         "validation_time": "00:03:59.000"
+    },
+    {
+        "estimator": "KNeighborsRegressor",
+        "mean": -0.7863635654920349,
+        "standard_deviation": 0.06970575874326579,
+        "median": -0.8090393788384009,
+        "variance": 0.004858892801974374,
+        "standard_error": 0.022042896365891608,
+        "min_max_score": [
+            -0.8647,
+            -0.6864
+        ],
+        "estimator_params": {
+            "algorithm": "brute",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": null,
+            "n_neighbors": 1,
+            "p": 2,
+            "weights": "distance"
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio, peso, serie, dia_da_semana, dias_desde_inicio",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:00:19.000",
+        "validation_time": "00:04:36.000"
     }
 ]

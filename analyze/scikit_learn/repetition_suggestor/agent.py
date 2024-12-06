@@ -28,9 +28,9 @@ class ScikitLearnRepetitionSuggestorAgent(CommonAgent):
 
     def _initialize_multi_process_manager(self):
         params_searcher_decision_tree = ScikitLearnHalvingRandomCVHyperParamsSearcher(
-            number_candidates=1000,
-            min_resources=300,
-            max_resources=8000,
+            number_candidates=1500,
+            min_resources=2000,
+            max_resources=5000,
             resource='n_samples',
             log_level=1
         )
@@ -44,9 +44,9 @@ class ScikitLearnRepetitionSuggestorAgent(CommonAgent):
         )
 
         params_searcher_kneighbors = ScikitLearnHalvingRandomCVHyperParamsSearcher(
-            number_candidates=1000,
-            min_resources=300,
-            max_resources=8000,
+            number_candidates=1500,
+            min_resources=2000,
+            max_resources=5000,
             resource='n_samples',
             log_level=1
         )

@@ -150,5 +150,43 @@
         "feature_selection_time": "00:00:00.000",
         "search_time": "00:14:46.000",
         "validation_time": "00:48:39.000"
+    },
+    {
+        "estimator": "RandomForestRegressor",
+        "mean": -0.8480624135367838,
+        "standard_deviation": 0.06937076117582368,
+        "median": -0.8489642139824887,
+        "variance": 0.004812302506113165,
+        "standard_error": 0.021936960833518315,
+        "min_max_score": [
+            -0.9932,
+            -0.7571
+        ],
+        "estimator_params": {
+            "bootstrap": true,
+            "ccp_alpha": 0.0,
+            "criterion": "poisson",
+            "max_depth": 23,
+            "max_features": null,
+            "max_leaf_nodes": null,
+            "max_samples": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 2,
+            "min_samples_split": 5,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "n_estimators": 90,
+            "n_jobs": null,
+            "oob_score": false,
+            "random_state": null,
+            "verbose": 0,
+            "warm_start": false
+        },
+        "scoring": "neg_mean_absolute_error",
+        "features": "exercicio, peso, serie, dia_da_semana, dias_desde_inicio",
+        "pre_processing_time": "00:00:00.000",
+        "feature_selection_time": "00:00:00.000",
+        "search_time": "00:02:36.000",
+        "validation_time": "00:16:04.000"
     }
 ]
