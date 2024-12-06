@@ -8,7 +8,8 @@ from wrappers.keras.validator.additional_validator import KerasAdditionalRegress
 from wrappers.keras.validator.basic_regressor_validator import KerasBasicRegressorValidator
 
 from analyze.common.common_agent import CommonAgent
-from analyze.keras.repetition_suggestor.neural_networks import RepetitionSuggestorLSTMV1, RepetitionSuggestorLSTMV2
+from analyze.keras.repetition_suggestor.neural_networks import RepetitionSuggestorLSTMV1, RepetitionSuggestorLSTMV2, \
+    RepetitionSuggestorLSTMV3
 from analyze.keras.repetition_suggestor.pre_processor import KerasRepetitionsSuggestorDataPreProcessor
 
 
@@ -115,7 +116,8 @@ class KerasRepetitionSuggestorAgent(CommonAgent):
             seed=KerasRepetitionsSuggestorDataPreProcessor.SEED,
             history_manager=history_manager_best_model,
             history_index=self.history_index,
-            delete_trials_after_execution=True
+            delete_trials_after_execution=True,
+            save_history=self.history_index is None
         )
 
     def _execute_additional_validation(self):

@@ -87,7 +87,7 @@ class RepetitionSuggestorLSTMV3(HyperModel):
         lstm_units_2 = hp.Int(name='lstm_units_2', min_value=32, max_value=512, step=32)
         dropout_lstm_2 = hp.Float(name='dropout_lstm_2', min_value=0.1, max_value=0.5, step=0.1)
 
-        dense_units_1 = hp.Int(name='lstm_units_1', min_value=32, max_value=1024, step=32)
+        dense_units_1 = hp.Int(name='lstm_units_1', min_value=32, max_value=512, step=32)
         dropout_dense_1 = hp.Float(name='dropout_lstm_1', min_value=0.1, max_value=0.5, step=0.1)
         kernel_regularizer_dense_1 = hp.Float(name='kernel_regularizer_dense_1', min_value=0.01, max_value=0.1, step=0.01)
 
