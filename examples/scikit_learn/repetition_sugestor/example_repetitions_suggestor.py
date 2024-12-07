@@ -6,8 +6,9 @@ from tabulate import tabulate
 from analyze.scikit_learn.repetition_suggestor.agent import ScikitLearnRepetitionSuggestorAgent
 
 suggestor = ScikitLearnRepetitionSuggestorAgent(
-    history_index=4,
-    force_execute_additional_validation=True
+    train_model=False,
+    history_index=None,
+    force_execute_additional_validation=False
 )
 
 now = datetime.datetime.now()

@@ -6,15 +6,15 @@ class CommonAgent(ABC):
     Implementação utilizada como base para criação dos agentes de machine learning.
     """
     def __init__(self,
+                 train_model: bool,
                  history_index: int | None,
                  force_execute_additional_validation: bool):
         """
-        :param force_execute_best_model_search: Flag que indica se deve ser executado obrigatoriamente o processo de
-        treinamento. Normalmente, após treinar o modelo, o intuito é utilizar a implementação com essa flag false e apenas
-        retreinar após algum tempo, quando a base de dados mudar.
-
-        :param data_path: Caminho para a base de dados.
+        :param train_model: Flag que indica se o processo de treinamento deve ocorrer.
+        :param history_index: Índice para busca do histórico.
+        :param force_execute_additional_validation: Flag que indica se a validação adicional deve ser executada.
         """
+        self.train_model = train_model
         self.history_index = history_index
         self._force_execute_additional_validation = force_execute_additional_validation
         self._data_pre_processor = None
@@ -42,8 +42,9 @@ class CommonAgent(ABC):
 
         :param dataset: Dicionário com os dados que deseja realizar a sugestão.
         """
-        self._process_manager.process_pipelines()
-        self._execute_additional_validation()
+        if self.train_model:
+            self._process_manager.process_pipelines()
+            self._execute_additional_validation()
 
         return self._execute_prediction(dataset)
 

@@ -4,7 +4,8 @@ from tabulate import tabulate
 from analyze.scikit_learn.classify_workout_type.agent import ScikitLearnClassifyWorkoutTypeAgent
 
 suggestor = ScikitLearnClassifyWorkoutTypeAgent(
-    history_index=-1,
+    train_model=False,
+    history_index=None,
     force_execute_additional_validation=False
 )
 

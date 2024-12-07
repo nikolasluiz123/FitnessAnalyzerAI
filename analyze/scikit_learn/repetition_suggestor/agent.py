@@ -156,7 +156,13 @@ class ScikitLearnRepetitionSuggestorAgent(CommonAgent):
         data_frame = pd.DataFrame.from_dict(data_dictionary, orient='columns')
         x = self._data_pre_processor.get_data_to_prediction(data_frame)
 
-        history_len = self._process_manager.history_manager.get_history_len()
-        model = self._process_manager.history_manager.get_saved_model(history_len)
+        history_best = ScikitLearnCrossValidationHistoryManager(
+            output_directory='executions_history',
+            models_directory='models_random_forest',
+            best_params_file_name='random_forest_best_params',
+            cv_results_file_name='random_forest_cv_results'
+        )
+
+        model = history_best.get_saved_model(version=5)
 
         return model.predict(x).round().astype(int)

@@ -5,7 +5,8 @@ from analyze.keras.weight_suggestor.agent import KerasWeightSuggestorAgent
 from analyze.keras.weight_suggestor.pre_processor import KerasWeightSuggestorDataPreProcessor
 
 suggestor = KerasWeightSuggestorAgent(
-    history_index=0,
+    train_model=False,
+    history_index=None,
     force_execute_additional_validation=True
 )
 

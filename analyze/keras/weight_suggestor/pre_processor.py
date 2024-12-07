@@ -367,6 +367,10 @@ class KerasWeightSuggestorDataPreProcessor(CommonDataPreProcessor):
 
         return x_data, y_data
 
+    def prepare_for_predict(self, dataset):
+        self._on_execute_train_process()
+        return self.get_data_as_numpy(dataset)
+
     def get_features_list(self) -> list[str]:
         return ['exercicio', 'serie', 'repeticoes', 'dia_da_semana', 'dias_desde_inicio']
 

@@ -141,8 +141,11 @@ class KerasWeightSuggestorAgent(CommonAgent):
                 additional_validator.validate()
 
     def _execute_prediction(self, dataset):
-        history_len = self._process_manager.history_manager.get_history_len()
-        model = self._process_manager.history_manager.get_saved_model(history_len)
+        history_best = KerasRegressorHistoryManager(output_directory='history_model_V3',
+                                                    models_directory='models',
+                                                    best_params_file_name='best_executions')
 
-        predictions = model.predict(self._data_pre_processor.get_data_as_numpy(dataset))
+        model = history_best.get_saved_model(version=1)
+        predictions = model.predict(self._data_pre_processor.prepare_for_predict(dataset))
+
         return self._data_pre_processor.scaler_y.inverse_transform(predictions).round().astype(int)

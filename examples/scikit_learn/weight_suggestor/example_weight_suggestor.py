@@ -6,8 +6,9 @@ from tabulate import tabulate
 from analyze.scikit_learn.weight_suggestor.agent import ScikitLearnWeightSuggestorAgent
 
 suggestor = ScikitLearnWeightSuggestorAgent(
-    history_index=3,
-    force_execute_additional_validation=True
+    train_model=False,
+    history_index=None,
+    force_execute_additional_validation=False
 )
 
 now = datetime.datetime.now()

@@ -156,11 +156,17 @@ class ScikitLearnClassifyWorkoutFrequencyAgent(CommonAgent):
     def _execute_prediction(self, data_dictionary: dict):
         predict_data = self._data_pre_processor.get_data_to_prediction(data_dictionary)
 
-        last_history = self._process_manager.history_manager.get_dictionary_from_params_json(-1)
-        features = last_history['features'].replace(' ', '').split(',')
+        history_best = ScikitLearnCrossValidationHistoryManager(
+            output_directory='executions_history',
+            models_directory='models_kneighbors',
+            best_params_file_name='kneighbors_best_params',
+            cv_results_file_name='kneighbors_cv_results'
+        )
+
+        best_history_json = history_best.get_dictionary_from_params_json(index=1)
+        features = best_history_json['features'].replace(' ', '').split(',')
         predict_data = predict_data[features]
 
-        history_len = self._process_manager.history_manager.get_history_len()
-        model = self._process_manager.history_manager.get_saved_model(history_len)
+        model = history_best.get_saved_model(version=2)
 
         return model.predict(predict_data)

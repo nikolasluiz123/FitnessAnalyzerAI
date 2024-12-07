@@ -5,8 +5,9 @@ from analyze.keras.repetition_suggestor.agent import KerasRepetitionSuggestorAge
 from analyze.keras.repetition_suggestor.pre_processor import KerasRepetitionsSuggestorDataPreProcessor
 
 suggestor = KerasRepetitionSuggestorAgent(
-    history_index=0,
-    force_execute_additional_validation=True
+    train_model=False,
+    history_index=None,
+    force_execute_additional_validation=False
 )
 
 test_data_pre_processor = KerasRepetitionsSuggestorDataPreProcessor()
